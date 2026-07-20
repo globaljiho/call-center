@@ -1,2 +1,275 @@
-# call-center
-손생보사콜센터
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>손생보 콜센터 번호 · 푸른청라본부</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="badge">KLi · 푸른청라본부</div>
+      <h1>손생보 콜센터 번호</h1>
+      <p>손해보험 긴급출동과 생명보험 콜센터를 한 곳에.<br>카드를 누르면 바로 전화가 걸립니다.</p>
+    </header>
+
+    <a href="tel:119" class="emergency-banner">
+      <div class="emergency-info">
+        <span class="icon">🚑</span>
+        <div>
+          <strong>인명 피해가 있다면</strong>
+          <p>무엇보다 먼저</p>
+        </div>
+      </div>
+      <div class="emergency-number">119</div>
+    </a>
+
+    <div class="tab-group">
+      <button class="tab-btn active" onclick="filterCategory('nonlife')">손해보험<br><span>긴급출동</span></button>
+      <button class="tab-btn" onclick="filterCategory('life')">생명보험<br><span>콜센터</span></button>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="보험사 이름 일부만 입력하세요 (예: 삼성, 메리츠)" onkeyup="filterCards()">
+    </div>
+
+    <div class="card-list" id="cardList">
+      <!-- 손해보험사 (12개) -->
+      <a href="tel:1588-5114" class="card" data-category="nonlife" data-name="삼성화재 애니카 긴급출동">
+        <div class="card-left">
+          <div class="logo-box blue">삼</div>
+          <div><h3>삼성화재</h3><p>애니카 긴급출동</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-5114</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-5656" class="card" data-category="nonlife" data-name="현대해상 하이카 서비스">
+        <div class="card-left">
+          <div class="logo-box green">현</div>
+          <div><h3>현대해상</h3><p>하이카 서비스</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-5656</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-0100" class="card" data-category="nonlife" data-name="DB손해보험 프로미카 출동">
+        <div class="card-left">
+          <div class="logo-box navy">D</div>
+          <div><h3>DB손해보험</h3><p>프로미카 출동</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-0100</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1544-0114" class="card" data-category="nonlife" data-name="KB손해보험 매직카 서비스">
+        <div class="card-left">
+          <div class="logo-box purple">K</div>
+          <div><h3>KB손해보험</h3><p>매직카 서비스</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1544-0114</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1566-7711" class="card" data-category="nonlife" data-name="메리츠화재 레디카 출동">
+        <div class="card-left">
+          <div class="logo-box red">메</div>
+          <div><h3>메리츠화재</h3><p>레디카 출동</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1566-7711</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1566-8000" class="card" data-category="nonlife" data-name="한화손해보험 긴급출동">
+        <div class="card-left">
+          <div class="logo-box orange">한</div>
+          <div><h3>한화손해보험</h3><p>고객콜센터/긴급출동</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1566-8000</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1688-1688" class="card" data-category="nonlife" data-name="흥국화재 마이카 서비스">
+        <div class="card-left">
+          <div class="logo-box red">흥</div>
+          <div><h3>흥국화재</h3><p>마이카 서비스</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1688-1688</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-3344" class="card" data-category="nonlife" data-name="롯데손해보험 긴급출동">
+        <div class="card-left">
+          <div class="logo-box red">롯</div>
+          <div><h3>롯데손해보험</h3><p>고객콜센터/긴급출동</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-3344</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-5959" class="card" data-category="nonlife" data-name="MG손해보험 긴급출동">
+        <div class="card-left">
+          <div class="logo-box green">M</div>
+          <div><h3>MG손해보험</h3><p>고객콜센터/긴급출동</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-5959</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1644-9000" class="card" data-category="nonlife" data-name="NH농협손해보험 긴급출동">
+        <div class="card-left">
+          <div class="logo-box green">농</div>
+          <div><h3>NH농협손해보험</h3><p>고객콜센터/긴급출동</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1644-9000</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1644-0007" class="card" data-category="nonlife" data-name="하나손해보험 긴급출동">
+        <div class="card-left">
+          <div class="logo-box green">하</div>
+          <div><h3>하나손해보험</h3><p>고객콜센터/긴급출동</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1644-0007</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1564-0000" class="card" data-category="nonlife" data-name="캐롯손해보험 긴급출동">
+        <div class="card-left">
+          <div class="logo-box orange">캐</div>
+          <div><h3>캐롯손해보험</h3><p>퍼마일 긴급출동</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1564-0000</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <!-- 생명보험사 (12개) -->
+      <a href="tel:1588-3114" class="card" data-category="life" data-name="삼성생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box blue">삼</div>
+          <div><h3>삼성생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-3114</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-6363" class="card" data-category="life" data-name="한화생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box orange">한</div>
+          <div><h3>한화생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-6363</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-1001" class="card" data-category="life" data-name="교보생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box red">교</div>
+          <div><h3>교보생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-1001</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-5580" class="card" data-category="life" data-name="신한라이프 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box blue">신</div>
+          <div><h3>신한라이프</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-5580</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-3131" class="card" data-category="life" data-name="DB생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box navy">D</div>
+          <div><h3>DB생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-3131</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-2288" class="card" data-category="life" data-name="흥국생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box red">흥</div>
+          <div><h3>흥국생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-2288</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-0058" class="card" data-category="life" data-name="라이나생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box blue">라</div>
+          <div><h3>라이나생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-0058</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1577-1004" class="card" data-category="life" data-name="동양생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box blue">동</div>
+          <div><h3>동양생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1577-1004</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-0220" class="card" data-category="life" data-name="미래에셋생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box orange">미</div>
+          <div><h3>미래에셋생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-0220</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1544-4000" class="card" data-category="life" data-name="NH농협생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box green">농</div>
+          <div><h3>NH농협생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1544-4000</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-9898" class="card" data-category="life" data-name="AIA생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box red">A</div>
+          <div><h3>AIA생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-9898</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-9600" class="card" data-category="life" data-name="메트라이프생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box blue">메</div>
+          <div><h3>메트라이프생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-9600</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+
+      <a href="tel:1588-3374" class="card" data-category="life" data-name="KB라이프생명 콜센터" style="display:none;">
+        <div class="card-left">
+          <div class="logo-box purple">K</div>
+          <div><h3>KB라이프생명</h3><p>고객콜센터</p></div>
+        </div>
+        <div class="card-right"><span class="phone">1588-3374</span><span class="call-text">눌러서 전화 ›</span></div>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    let currentCategory = 'nonlife';
+
+    function filterCategory(category) {
+      currentCategory = category;
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach((tab, index) => {
+        if ((category === 'nonlife' && index === 0) || (category === 'life' && index === 1)) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+      filterCards();
+    }
+
+    function filterCards() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const categoryMatch = card.getAttribute('data-category') === currentCategory;
+        const nameMatch = card.getAttribute('data-name').toLowerCase().includes(query);
+
+        if (categoryMatch && nameMatch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
