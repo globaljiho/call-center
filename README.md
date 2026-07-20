@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>손생보 콜센터 번호 · 푸른청라본부</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <header class="header">
-      <div class="badge">KLi · 푸른청라본부</div>
       <h1>손생보 콜센터 번호</h1>
       <p>손해보험 긴급출동과 생명보험 콜센터를 한 곳에.<br>카드를 누르면 바로 전화가 걸립니다.</p>
     </header>
