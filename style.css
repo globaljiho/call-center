@@ -2,15 +2,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
 
 body {
-  background-color: #121c3b;
-  color: #ffffff;
+  background-color: #f1f5f9;
+  color: #0f172a;
   display: flex;
   justify-content: center;
-  padding: 20px 10px;
+  padding: 24px 12px;
 }
 
 .container {
@@ -18,117 +18,143 @@ body {
   max-width: 480px;
 }
 
+/* 상단 헤더 */
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 12px;
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
   margin-bottom: 12px;
+  letter-spacing: -0.3px;
 }
 
 .header h1 {
   font-size: 26px;
   margin-bottom: 8px;
-  font-weight: 700;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
 }
 
 .header p {
-  font-size: 13px;
-  color: #a0aec0;
-  line-height: 1.4;
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
 }
 
+/* 긴급출동 119 배너 */
 .emergency-banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #d9381e, #e65100);
-  padding: 16px 20px;
-  border-radius: 16px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  padding: 18px 22px;
+  border-radius: 20px;
   text-decoration: none;
   color: white;
   margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(217, 56, 30, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.emergency-banner:active {
+  transform: scale(0.98);
 }
 
 .emergency-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .emergency-info .icon {
-  font-size: 24px;
+  font-size: 26px;
 }
 
 .emergency-info strong {
-  font-size: 14px;
+  font-size: 15px;
   display: block;
+  font-weight: 700;
 }
 
 .emergency-info p {
   font-size: 12px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .emergency-number {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
 }
 
+/* 탭 스위치 */
 .tab-group {
   display: flex;
-  background: #2a3759;
-  padding: 4px;
-  border-radius: 14px;
-  margin-bottom: 12px;
+  background: #e2e8f0;
+  padding: 5px;
+  border-radius: 16px;
+  margin-bottom: 14px;
 }
 
 .tab-btn {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   border: none;
   background: transparent;
-  color: #a0aec0;
+  color: #64748b;
   font-size: 14px;
-  font-weight: bold;
-  border-radius: 10px;
+  font-weight: 700;
+  border-radius: 12px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .tab-btn span {
   font-size: 11px;
-  font-weight: normal;
+  font-weight: 500;
+  display: block;
+  margin-top: 2px;
 }
 
 .tab-btn.active {
-  background: #1a233d;
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  background: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
+/* 검색창 */
 .search-box input {
   width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: none;
+  padding: 15px 18px;
+  border-radius: 16px;
+  border: 1px solid #cbd5e1;
   background: #ffffff;
   font-size: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   outline: none;
-  color: #333333;
+  color: #0f172a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
+.search-box input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* 카드 리스트 */
 .card-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .card {
@@ -136,47 +162,55 @@ body {
   justify-content: space-between;
   align-items: center;
   background: #ffffff;
-  color: #333333;
-  padding: 16px;
-  border-radius: 16px;
+  padding: 18px 20px;
+  border-radius: 20px;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+  transition: all 0.2s ease;
+}
+
+.card:active {
+  transform: scale(0.98);
+  background: #f8fafc;
 }
 
 .card-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .logo-box {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.logo-box.blue { background: #3b82f6; }
-.logo-box.green { background: #10b981; }
-.logo-box.navy { background: #1e3a8a; }
-.logo-box.purple { background: #8b5cf6; }
-.logo-box.red { background: #ef4444; }
-.logo-box.orange { background: #f97316; }
+.logo-box.blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.logo-box.green { background: linear-gradient(135deg, #10b981, #047857); }
+.logo-box.navy { background: linear-gradient(135deg, #1e3a8a, #0f172a); }
+.logo-box.purple { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.logo-box.red { background: linear-gradient(135deg, #ef4444, #b91c1c); }
+.logo-box.orange { background: linear-gradient(135deg, #f97316, #c2410c); }
 
 .card-left h3 {
   font-size: 16px;
+  font-weight: 700;
   margin-bottom: 2px;
-  color: #111827;
+  color: #0f172a;
 }
 
 .card-left p {
   font-size: 12px;
-  color: #6b7280;
+  color: #64748b;
 }
 
 .card-right {
@@ -187,11 +221,14 @@ body {
   display: block;
   font-size: 18px;
   font-weight: 800;
-  color: #111827;
+  color: #0f172a;
+  letter-spacing: -0.3px;
 }
 
 .call-text {
   font-size: 11px;
-  color: #ef4444;
-  font-weight: bold;
+  color: #2563eb;
+  font-weight: 700;
+  margin-top: 2px;
+  display: block;
 }
