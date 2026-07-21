@@ -200,21 +200,30 @@ body {
 .logo-box.purple { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
 .logo-box.red { background: linear-gradient(135deg, #ef4444, #b91c1c); }
 .logo-box.orange { background: linear-gradient(135deg, #f97316, #c2410c); }
+.logo-box.yellow { background: linear-gradient(135deg, #fbbf24, #d97706); }
+.logo-box.pink { background: linear-gradient(135deg, #ec4899, #be185d); }
 
 .card-left h3 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   margin-bottom: 2px;
   color: #0f172a;
+  letter-spacing: -0.3px;
 }
 
 .card-left p {
-  font-size: 12px;
+  font-size: 11px;
   color: #64748b;
+  line-height: 1.2;
 }
 
 .card-right {
-  text-align: right;
+  text-align: left;
+  border-top: 1px dashed #f1f5f9;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .phone {
@@ -226,9 +235,8 @@ body {
 }
 
 .call-text {
-  font-size: 11px;
+  font-size: 12px;
   color: #2563eb;
   font-weight: 700;
-  margin-top: 2px;
   display: block;
 }
